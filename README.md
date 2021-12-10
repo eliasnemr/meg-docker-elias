@@ -8,6 +8,8 @@ Docker image creation for [MEG](https://github.com/minima-global/emh).
 2. Open a browser and go to `127.0.0.1:9004` to open your MiniDAPP Hub.
 3. Install the `emh.minidapp` which you will find in the `./dapps` folder of this repo.
 
+_note_: you may have to edit the `platform: linux/x86_64` to the right platform in the mysql service of the `docker-compose` yaml file.
+
 ## Useful Commands
 
 Fire up a root shell in the running container:
