@@ -15,7 +15,7 @@ RUN useradd -r -u 1010 -g 1010 -d $HOME minima
 #prompt -y says yes to everything when installing packages
 #INSTALL OPENJDK-11 AND OTHER
 RUN apt-get update && \
-  apt-get install -y openjdk-11-jre-headless mysql-client curl && \
+  apt-get install -y openjdk-11-jre-headless curl && \
   apt-get clean;
 
 # Copy in startup script, minima and dapps
