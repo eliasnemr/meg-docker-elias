@@ -5,8 +5,8 @@ Docker image creation for [MEG](https://github.com/minima-global/emh).
 ## Install and run MEG
 
 1. Run `docker compose up` at the root of this repo.
-2. Open a browser and go to `127.0.0.1:9004` to open your MiniDAPP Hub
-3. Install the MEG Minidapp which you will find in the dapps folder of this repo.
+2. Open a browser and go to `127.0.0.1:9004` to open your MiniDAPP Hub.
+3. Install the `emh.minidapp` which you will find in the `./dapps` folder of this repo.
 
 ## Useful Commands
 
