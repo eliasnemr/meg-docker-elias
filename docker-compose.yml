@@ -1,0 +1,40 @@
+version: "3.8"
+# Make sure to build minima image from root folder
+# docker build -t minimaglobal .
+# when new minidapp system out we can use the official docker for minima
+# @ image: minima:latest
+
+services:
+  mysql:
+    container_name: flash_mysql
+    restart: always
+    image: mysql:latest
+    platform: linux/x86_64
+    volumes:
+      - type: bind
+        source: ./my-custom.cnf # need to set skip-networking=off for container
+        target: /etc/mysql/my.cnf
+    environment:
+      MYSQL_USER: 'minima'
+      MYSQL_PASSWORD: 'Minima123?'
+      MYSQL_ROOT_PASSWORD: 'Minima123?' # TODO: Change this
+    ports:
+      - 3306:3306
+    expose: 
+     - '3306'
+
+  app:
+    container_name: minima_node
+    build: .
+    ports: 
+      - 9001:9001
+      - 9002:9002
+      - 9003:9003
+      - 9004:9004
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
+    restart: on-failure
+  
